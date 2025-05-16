@@ -1,0 +1,97 @@
+nohup: ignoring input
+B1000图像的个数为: 13
+B0图像的个数为: 13
+T1图像切片个数为:3328
+B0图像切片个数为:3328
+data is loading
+initialize network with normal
+loading the model from /home/chenyifei/T1_2_b0/pix2pix/monkey_brain/results/1_net_G.pth
+---------- Networks initialized -------------
+DataParallel(
+  (module): UnetGenerator(
+    (model): UnetSkipConnectionBlock(
+      (model): Sequential(
+        (0): Conv2d(1, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): UnetSkipConnectionBlock(
+          (model): Sequential(
+            (0): LeakyReLU(negative_slope=0.2, inplace=True)
+            (1): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): UnetSkipConnectionBlock(
+              (model): Sequential(
+                (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                (1): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): UnetSkipConnectionBlock(
+                  (model): Sequential(
+                    (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                    (1): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                    (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                    (3): UnetSkipConnectionBlock(
+                      (model): Sequential(
+                        (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                        (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                        (3): UnetSkipConnectionBlock(
+                          (model): Sequential(
+                            (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                            (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                            (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                            (3): UnetSkipConnectionBlock(
+                              (model): Sequential(
+                                (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                                (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                                (3): UnetSkipConnectionBlock(
+                                  (model): Sequential(
+                                    (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                                    (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                    (2): ReLU(inplace=True)
+                                    (3): ConvTranspose2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                    (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                                  )
+                                )
+                                (4): ReLU(inplace=True)
+                                (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                              )
+                            )
+                            (4): ReLU(inplace=True)
+                            (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                            (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                          )
+                        )
+                        (4): ReLU(inplace=True)
+                        (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                        (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                      )
+                    )
+                    (4): ReLU(inplace=True)
+                    (5): ConvTranspose2d(1024, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                  )
+                )
+                (4): ReLU(inplace=True)
+                (5): ConvTranspose2d(512, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (4): ReLU(inplace=True)
+            (5): ConvTranspose2d(256, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+            (6): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (2): ReLU(inplace=True)
+        (3): ConvTranspose2d(128, 1, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (4): Tanh()
+      )
+    )
+  )
+)
+[Network G] Total number of parameters : 54.408 M
+-----------------------------------------------
+Traceback (most recent call last):
+  File "/home/chenyifei/T1_2_b0/pix2pix/test_epoch.py", line 35, in <module>
+    save_img = save_img(True,ispretrain,read_dataset.get_slice_scope(),ispretrain,test_epoch)
+  File "/home/chenyifei/T1_2_b0/pix2pix/save_img.py", line 16, in __init__
+FileNotFoundError: [Errno 2] No such file or directory: '/home/chenyifei/T1_2_b0/pix2pix/monkey_brain/test_mask_uwm'

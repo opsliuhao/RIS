@@ -1,0 +1,306 @@
+nohup: ignoring input
+/home/chenyifei/.conda/envs/pytorch/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+B1000图像的个数为: 78
+B0图像的个数为: 78
+T1图像切片个数为:19968
+B0图像切片个数为:19968
+B1000图像的个数为: 8
+B0图像的个数为: 8
+T1图像切片个数为:2048
+B0图像切片个数为:2048
+已加载数据...
+initialize network with normal
+initialize network with normal
+loading the model from /home/chenyifei/T1_2_b0/pix2pix/monkey_brain/results/78_net_G.pth
+loading the model from /home/chenyifei/T1_2_b0/pix2pix/monkey_brain/results/78_net_D.pth
+---------- Networks initialized -------------
+DataParallel(
+  (module): UnetGenerator(
+    (model): UnetSkipConnectionBlock(
+      (model): Sequential(
+        (0): Conv2d(1, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): UnetSkipConnectionBlock(
+          (model): Sequential(
+            (0): LeakyReLU(negative_slope=0.2, inplace=True)
+            (1): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+            (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (3): UnetSkipConnectionBlock(
+              (model): Sequential(
+                (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                (1): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                (3): UnetSkipConnectionBlock(
+                  (model): Sequential(
+                    (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                    (1): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                    (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                    (3): UnetSkipConnectionBlock(
+                      (model): Sequential(
+                        (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                        (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                        (3): UnetSkipConnectionBlock(
+                          (model): Sequential(
+                            (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                            (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                            (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                            (3): UnetSkipConnectionBlock(
+                              (model): Sequential(
+                                (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                                (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                                (3): UnetSkipConnectionBlock(
+                                  (model): Sequential(
+                                    (0): LeakyReLU(negative_slope=0.2, inplace=True)
+                                    (1): Conv2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                    (2): ReLU(inplace=True)
+                                    (3): ConvTranspose2d(512, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                    (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                                  )
+                                )
+                                (4): ReLU(inplace=True)
+                                (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                                (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                              )
+                            )
+                            (4): ReLU(inplace=True)
+                            (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                            (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                          )
+                        )
+                        (4): ReLU(inplace=True)
+                        (5): ConvTranspose2d(1024, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                        (6): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                      )
+                    )
+                    (4): ReLU(inplace=True)
+                    (5): ConvTranspose2d(1024, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                  )
+                )
+                (4): ReLU(inplace=True)
+                (5): ConvTranspose2d(512, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+                (6): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (4): ReLU(inplace=True)
+            (5): ConvTranspose2d(256, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+            (6): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (2): ReLU(inplace=True)
+        (3): ConvTranspose2d(128, 1, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (4): Tanh()
+      )
+    )
+  )
+)
+[Network G] Total number of parameters : 54.408 M
+DataParallel(
+  (module): NLayerDiscriminator(
+    (model): Sequential(
+      (0): Conv2d(2, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+      (1): LeakyReLU(negative_slope=0.2, inplace=True)
+      (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (4): LeakyReLU(negative_slope=0.2, inplace=True)
+      (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+      (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (7): LeakyReLU(negative_slope=0.2, inplace=True)
+      (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1), bias=False)
+      (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): LeakyReLU(negative_slope=0.2, inplace=True)
+      (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    )
+  )
+)
+[Network D] Total number of parameters : 2.765 M
+-----------------------------------------------
+learning rate 0.0002000 -> 0.0002000
+epoch:79, data:022125_bB0, psnr is 38.88442363853551, ssim is 0.9222080794151645, mse is 462.30741180555555, mi is 1.4193156129808442 
+epoch:79, data:022126_bB0, psnr is 38.62579300025089, ssim is 0.9108458088597344, mse is 933.3775, mi is 1.4102465745496542 
+epoch:79, data:022127_bB0, psnr is 31.91541164042775, ssim is 0.919194643226325, mse is 620.4773673611111, mi is 1.3496093445295265 
+epoch:79, data:022128_bB0, psnr is 35.84070106250262, ssim is 0.9299340008648778, mse is 371.9965111111111, mi is 1.3995954902503565 
+epoch:79, data:022129_bB0, psnr is 40.72180848833487, ssim is 0.9240590523713919, mse is 847.4768131944444, mi is 1.4587259549072626 
+epoch:79, data:022130_bB0, psnr is 38.64676820662002, ssim is 0.9267838813543524, mse is 1163.84264375, mi is 1.4272365542242895 
+epoch:79, data:022131_bB0, psnr is 38.0343776584928, ssim is 0.9069916225498276, mse is 1504.1692173611111, mi is 1.4136122146443368 
+epoch:79, data:022132_bB0, psnr is 35.876187409473374, ssim is 0.8956373715235766, mse is 1241.8088944444444, mi is 1.3628345758137148 
+epoch:79, data:022133_bB0, psnr is 39.69589812078256, ssim is 0.9165001137445056, mse is 889.7595319444445, mi is 1.4443283616014249 
+epoch:79, data:022134_bB0, psnr is 36.95389270725724, ssim is 0.9116977821224711, mse is 1187.255813888889, mi is 1.4096347928004602 
+epoch:79, data:022135_bB0, psnr is 39.593648185995036, ssim is 0.9088213543994833, mse is 1124.671247662859, mi is 1.4312084310355004 
+epoch:79, data:022136_bB0, psnr is 37.978585332348814, ssim is 0.9177318233055864, mse is 773.0586215277777, mi is 1.4307323662657714 
+epoch:79, data:022137_bB0, psnr is 38.03172954771425, ssim is 0.9363319148044278, mse is 483.84603888888887, mi is 1.4318571864985994 
+epoch:79, data:022138_bB0, psnr is 40.213201730551205, ssim is 0.9201398719930274, mse is 778.9854090277778, mi is 1.4426903193962055 
+epoch:79, data:022139_bB0, psnr is 30.0434300959078, ssim is 0.9046517597186859, mse is 777.4276055555556, mi is 1.3424904449435595 
+epoch:79, data:022146_bB0, psnr is 34.85233627464907, ssim is 0.8839285181299145, mse is 52185874.68602998, mi is 1.379088459440886 
+epoch:79, data:022147_bB0, psnr is 36.41011178963956, ssim is 0.9159332084043819, mse is 39656317.50047967, mi is 1.4089103022034652 
+epoch:79, data:022149_bB0, psnr is 35.47788676479947, ssim is 0.8828739851358804, mse is 42087679.809686914, mi is 1.3854668635430891 
+epoch:79, data:022150_bB0, psnr is 37.52966632025773, ssim is 0.8899238074668896, mse is 101055249.6300404, mi is 1.4221339850734298 
+epoch:79, data:022155_bB0, psnr is 34.101712602674006, ssim is 0.8935392773905053, mse is 130049.83629402281, mi is 1.3948371835275728 
+epoch:79, data:022156_bB0, psnr is 34.10321911692583, ssim is 0.8845175518529963, mse is 151708.39087882874, mi is 1.3914249969577246 
+epoch:79, data:022157_bB0, psnr is 32.59235913041616, ssim is 0.8667474751723213, mse is 193106.95424882192, mi is 1.368245779599996 
+epoch:79, data:022213_bB0, psnr is 32.43018165898574, ssim is 0.9127481620246309, mse is 140130.83872523796, mi is 1.334750142325402 
+epoch:79, data:022214_bB0, psnr is 25.233334570576275, ssim is 0.7932632290177178, mse is 842469.0324083116, mi is 1.2699243007805208 
+epoch:79, data:022215_bB0, psnr is 34.971423154620894, ssim is 0.9147365785360163, mse is 236204.15450861846, mi is 1.363558676894998 
+epoch:79, data:031087_TB0, psnr is 39.25450087883132, ssim is 0.9621704705259196, mse is 60856.336645071846, mi is 1.4471547135809912 
+epoch:79, data:031088_TB0, psnr is 38.75586619041213, ssim is 0.9685529036034812, mse is 59931.42958243234, mi is 1.44599555487768 
+epoch:79, data:031089_TB0, psnr is 37.230613309120216, ssim is 0.9655279267744561, mse is 63383.55324140276, mi is 1.4301169205897928 
+epoch:79, data:031090_TB0, psnr is 37.37716343921602, ssim is 0.9676045937076199, mse is 57488.462606811525, mi is 1.4411367541795133 
+epoch:79, data:031091_TB0, psnr is 38.48941054594879, ssim is 0.969036836962027, mse is 63539.53658883231, mi is 1.4512813513712162 
+epoch:79, data:031092_TB0, psnr is 40.952833667556874, ssim is 0.9764207100877451, mse is 51154.937447684155, mi is 1.4722265059362227 
+epoch:79, data:031093_TB0, psnr is 38.99232794483234, ssim is 0.9726734159135195, mse is 47268.9853415353, mi is 1.4498503142268844 
+epoch:79, data:031094_TB0, psnr is 39.078565157301, ssim is 0.9699043447998523, mse is 49461.70609784807, mi is 1.4473691033585994 
+epoch:79, data:031095_TB0, psnr is 35.827743686383016, ssim is 0.9702952259424927, mse is 53968.587557983396, mi is 1.4231939722636429 
+epoch:79, data:031096_TB0, psnr is 38.97844664022033, ssim is 0.9702125743858802, mse is 51551.90820792062, mi is 1.4528087145379476 
+epoch:79, data:031097_TB0, psnr is 38.49204260050889, ssim is 0.9727909876117468, mse is 39019.27822091239, mi is 1.4489021674064786 
+epoch:79, data:031098_TB0, psnr is 39.013886082261905, ssim is 0.967304367182312, mse is 47922.21383797782, mi is 1.4473985551837862 
+epoch:79, data:031099_TB0, psnr is 37.304817049019604, ssim is 0.9689119509459437, mse is 59997.94379752023, mi is 1.4517900792927627 
+epoch:79, data:031100_TB0, psnr is 37.79269176546104, ssim is 0.977868021635998, mse is 42969.21958618164, mi is 1.4488848185130523 
+epoch:79, data:031101_TB0, psnr is 39.25028124357866, ssim is 0.9684672603160289, mse is 58414.48873944964, mi is 1.4553071029596263 
+epoch:79, data:031102_TB0, psnr is 38.512422582976775, ssim is 0.9690709197025487, mse is 42999.964649745394, mi is 1.4492269541165237 
+epoch:79, data:031103_TB0, psnr is 36.87872729955342, ssim is 0.9643488791414312, mse is 57104.34340384347, mi is 1.4285299856972211 
+epoch:79, data:031104_TB0, psnr is 38.2825382472472, ssim is 0.9675782154022969, mse is 56926.75515834263, mi is 1.4372563296482563 
+epoch:79, data:031105_TB0, psnr is 39.00127895552832, ssim is 0.9736851973066145, mse is 52057.10409807478, mi is 1.45917693595487 
+epoch:79, data:031106_TB0, psnr is 39.00205303082459, ssim is 0.9671709102348631, mse is 58128.40315246582, mi is 1.4441031647178058 
+epoch:79, data:031107_TB0, psnr is 38.17683787014133, ssim is 0.9610829365046236, mse is 64014.80534711565, mi is 1.4366098744649054 
+epoch:79, data:031108_TB0, psnr is 40.191169752286115, ssim is 0.9721850744451043, mse is 36269.696878051756, mi is 1.4651171202224809 
+epoch:79, data:031109_TB0, psnr is 39.77263870721824, ssim is 0.9695667497818896, mse is 59380.70300249372, mi is 1.4567069114606466 
+epoch:79, data:031110_TB0, psnr is 37.07671010065792, ssim is 0.9679678224675455, mse is 47795.68019583566, mi is 1.4407222368360137 
+epoch:79, data:031111_TB0, psnr is 38.55754484684043, ssim is 0.9727618783863639, mse is 35577.91160583496, mi is 1.4495576544548752 
+epoch:79, data:031113_TB0, psnr is 35.926317393625894, ssim is 0.9661009446334767, mse is 56028.83670654297, mi is 1.4228857203980803 
+epoch:79, data:031114_TB0, psnr is 38.72333149320137, ssim is 0.9733577843575448, mse is 44818.84128592355, mi is 1.4490324007197837 
+epoch:79, data:031115_TB0, psnr is 39.67229030986327, ssim is 0.9721498632577087, mse is 47207.63537030901, mi is 1.4592233829462875 
+epoch:79, data:031116_TB0, psnr is 40.255349049034734, ssim is 0.9712477307392312, mse is 42608.0646144322, mi is 1.4658698388897338 
+epoch:79, data:031117_TB0, psnr is 39.460630686306345, ssim is 0.973712441516394, mse is 53889.99175981794, mi is 1.4551154814066858 
+epoch:79, data:031118_TB0, psnr is 38.71396590119177, ssim is 0.9688710873742493, mse is 46607.39476318359, mi is 1.4499891674147558 
+epoch:79, data:031119_TB0, psnr is 37.05661568412904, ssim is 0.9685265185568648, mse is 43672.05702907017, mi is 1.4306046357312765 
+epoch:79, data:031120_TB0, psnr is 36.41930016977974, ssim is 0.967619436058406, mse is 47858.5216217041, mi is 1.4213116858424866 
+epoch:79, data:031121_TB0, psnr is 38.49980977959471, ssim is 0.9700812990059724, mse is 45578.05408543178, mi is 1.4487378285852228 
+epoch:79, data:031122_TB0, psnr is 38.9390697438482, ssim is 0.9669497755397353, mse is 57812.07506321499, mi is 1.4482043963741213 
+epoch:79, data:031123_TB0, psnr is 37.338219770936526, ssim is 0.9699724991107345, mse is 53450.60934361049, mi is 1.4346248118214016 
+epoch:79, data:031124_TB0, psnr is 37.416947365330316, ssim is 0.9700121134655065, mse is 48544.31501552037, mi is 1.4431844347822171 
+epoch:79, data:031125_TB0, psnr is 40.68119400357826, ssim is 0.9690378170866152, mse is 42371.928679112025, mi is 1.4666890282920169 
+epoch:79, data:031126_TB0, psnr is 35.69362558252919, ssim is 0.970898298930143, mse is 42537.37299107143, mi is 1.4121697779694955 
+epoch:79, data:031127_TB0, psnr is 37.89995642055636, ssim is 0.9687841842528232, mse is 54386.926430402484, mi is 1.4421575290993898 
+epoch:79, data:031128_TB0, psnr is 39.27338273983118, ssim is 0.970214572711744, mse is 44677.92750854492, mi is 1.45984743313326 
+epoch:79, data:031129_TB0, psnr is 38.626063712321425, ssim is 0.9656073795171182, mse is 45372.62270595005, mi is 1.4414688976846601 
+epoch:79, data:031130_TB0, psnr is 39.33570390391485, ssim is 0.9688153089291472, mse is 38747.092001342775, mi is 1.4572750567652875 
+epoch:79, data:031131_TB0, psnr is 39.64812611828109, ssim is 0.9740453152581572, mse is 37936.53873857771, mi is 1.4677058535463832 
+epoch:79, data:031132_TB0, psnr is 39.12206179456092, ssim is 0.9664518996666648, mse is 50174.03914097377, mi is 1.4506911447418451 
+epoch:79, data:031133_TB0, psnr is 36.59424857589771, ssim is 0.9681485052029644, mse is 53046.75729762486, mi is 1.4272972688916368 
+epoch:79, data:031134_TB0, psnr is 37.559478244131455, ssim is 0.9684486282358242, mse is 46354.52258911133, mi is 1.4395471427762176 
+epoch:79, data:031135_TB0, psnr is 40.29977309370457, ssim is 0.9689693233718831, mse is 38831.35531572614, mi is 1.4643278651637903 
+epoch:79, data:031136_TB0, psnr is 37.59724245512575, ssim is 0.968042291901808, mse is 39063.69177638463, mi is 1.4400405844996877 
+epoch:79, data:031137_TB0, psnr is 39.498572228592025, ssim is 0.9658404172802783, mse is 37983.638166591096, mi is 1.45214215442365 
+epoch:79, data:031138_TB0, psnr is 37.63792628061204, ssim is 0.9697209864401093, mse is 41117.2521711077, mi is 1.447360516689312 
+epoch:79, data:031139_TB0, psnr is 35.82536901454593, ssim is 0.9694250816489891, mse is 42632.729296875, mi is 1.4200444943832862 
+epoch:79, data:031140_TB0, psnr is 40.64610872981603, ssim is 0.9758440485588344, mse is 53242.90586983817, mi is 1.4696192278256133 
+saving the latest model (epoch 79,total_iters 312)
+saving the model at the end of epoch 79,iters 312
+End of epoch 79 / 80 	 Time Taken: 3056 sec
+val:
+
+data:022140_bB0, psnr is 28.616883397813417, ssim is 0.8911743652155798, mse is 833.0031895833333, mi is 1.3137311431293597 
+data:022153_bB0, psnr is 33.06627881471118, ssim is 0.8686500587039692, mse is 84184653.92151697, mi is 1.3466870925153378 
+data:022158_bB0, psnr is 27.95578423519089, ssim is 0.7971277399782022, mse is 966892.2128034319, mi is 1.3142112828236472 
+data:022216_bB0, psnr is 25.58318183117505, ssim is 0.8867796866867063, mse is 437286.9117455775, mi is 1.3117286453051056 
+data:031141_TB0, psnr is 36.01653646640471, ssim is 0.9575104730274734, mse is 146770.56466020856, mi is 1.412212333884814 
+data:031142_TB0, psnr is 36.06229246277322, ssim is 0.9582016156168583, mse is 121233.44272330147, mi is 1.40679579544218 
+data:031143_TB0, psnr is 33.942501061938984, ssim is 0.9517297316178306, mse is 143435.25898699078, mi is 1.3937596106793333 
+data:031144_TB0, psnr is 35.43691501694814, ssim is 0.9591209650053074, mse is 80846.74777614049, mi is 1.4054588165859367 
+learning rate 0.0002000 -> 0.0002000
+epoch:80, data:031140_TB0, psnr is 39.325340472418596, ssim is 0.924894795418454, mse is 405.91327916666665, mi is 1.4248414990476883 
+epoch:80, data:022125_bB0, psnr is 39.84657053534561, ssim is 0.912195296214241, mse is 623.0677243055555, mi is 1.419915002773001 
+epoch:80, data:022126_bB0, psnr is 33.405370890844566, ssim is 0.9327614030950507, mse is 433.8221854166667, mi is 1.3784449600463424 
+epoch:80, data:022127_bB0, psnr is 36.661916227172796, ssim is 0.9394482768869375, mse is 285.6149805555556, mi is 1.4117101335958344 
+epoch:80, data:022128_bB0, psnr is 40.50489602003022, ssim is 0.9284436467375423, mse is 760.4996979166667, mi is 1.452251946665297 
+epoch:80, data:022129_bB0, psnr is 39.25597385716525, ssim is 0.9283049241119483, mse is 1008.3287270833333, mi is 1.435901116044128 
+epoch:80, data:022130_bB0, psnr is 36.424181924908495, ssim is 0.907249172011529, mse is 1447.8286965277778, mi is 1.3920675819713124 
+epoch:80, data:022131_bB0, psnr is 36.70474695698082, ssim is 0.9029475310751256, mse is 991.701023611111, mi is 1.3796242896681294 
+epoch:80, data:022132_bB0, psnr is 38.64175386929731, ssim is 0.9148701998131129, mse is 826.8191826388888, mi is 1.4262791993458426 
+epoch:80, data:022133_bB0, psnr is 36.243986226118416, ssim is 0.917663291269529, mse is 926.67199375, mi is 1.4154418050238577 
+epoch:80, data:022134_bB0, psnr is 39.20077786094337, ssim is 0.909972037590625, mse is 1007.0696584664712, mi is 1.4246932176915472 
+epoch:80, data:022135_bB0, psnr is 35.01878301835694, ssim is 0.9151726606914078, mse is 735.382175, mi is 1.3782997480416563 
+epoch:80, data:022136_bB0, psnr is 35.49304671976222, ssim is 0.9312737802389083, mse is 493.6846541666667, mi is 1.3986217527339917 
+epoch:80, data:022137_bB0, psnr is 37.757283325167236, ssim is 0.9167828041794458, mse is 744.6253458333333, mi is 1.4126094124052078 
+epoch:80, data:022138_bB0, psnr is 29.86962419916637, ssim is 0.9056412837353327, mse is 703.1664506944444, mi is 1.3374836669526384 
+epoch:80, data:022139_bB0, psnr is 34.65338539537085, ssim is 0.8795275026674413, mse is 53273280.79136599, mi is 1.3865510055034511 
+epoch:80, data:022146_bB0, psnr is 36.211057897301565, ssim is 0.9228370629049709, mse is 36245532.016131364, mi is 1.4051277725328588 
+epoch:80, data:022147_bB0, psnr is 34.51997075630807, ssim is 0.8771101853995288, mse is 46084062.355437316, mi is 1.3671783485848354 
+epoch:80, data:022149_bB0, psnr is 35.487364219825885, ssim is 0.8887244049018688, mse is 81868664.27544832, mi is 1.3847519204163106 
+epoch:80, data:022150_bB0, psnr is 32.17968136987528, ssim is 0.8782792800291334, mse is 209327.23922293526, mi is 1.360155757802003 
+epoch:80, data:022155_bB0, psnr is 34.233553563507236, ssim is 0.8892543021636358, mse is 144376.97980220735, mi is 1.4019492281599517 
+(epoch:80, iters:88, time:18.837,data:0.351)G_GAN:0.257 G_L1:0.315 D_real:0.343 D_fake:0.298 
+epoch:80, data:022156_bB0, psnr is 32.91523414017193, ssim is 0.8584861447744206, mse is 174481.0232824901, mi is 1.3696336071070896 
+epoch:80, data:022157_bB0, psnr is 33.02923033918351, ssim is 0.9184510520817064, mse is 116300.19625675328, mi is 1.345395993454741 
+epoch:80, data:022213_bB0, psnr is 24.993074296075513, ssim is 0.7911002902143595, mse is 822781.4475613064, mi is 1.2772203442637684 
+epoch:80, data:022214_bB0, psnr is 34.42661555436416, ssim is 0.9152832240354905, mse is 215211.50904425007, mi is 1.3636412322411677 
+epoch:80, data:022215_bB0, psnr is 38.57075590668968, ssim is 0.9643994691209383, mse is 64986.530966186525, mi is 1.432948508144135 
+epoch:80, data:031087_TB0, psnr is 38.840588467363744, ssim is 0.9689503797682743, mse is 61166.84493931362, mi is 1.4522631762351175 
+epoch:80, data:031088_TB0, psnr is 37.82714296740428, ssim is 0.9678652504277437, mse is 57705.25695103237, mi is 1.4409155483892166 
+epoch:80, data:031089_TB0, psnr is 37.952883993438384, ssim is 0.9682986775855793, mse is 54069.9586970738, mi is 1.4380580404323784 
+epoch:80, data:031090_TB0, psnr is 37.87185801662084, ssim is 0.9690190967516781, mse is 61930.43853934152, mi is 1.4413252108888088 
+epoch:80, data:031091_TB0, psnr is 41.21362430716289, ssim is 0.9767864150245916, mse is 49077.725988333565, mi is 1.481088884108917 
+epoch:80, data:031092_TB0, psnr is 38.28055958672945, ssim is 0.9712740095431598, mse is 50345.684933035714, mi is 1.4485148124230292 
+epoch:80, data:031093_TB0, psnr is 38.82964244978701, ssim is 0.9701134740631787, mse is 53047.96750662667, mi is 1.4445190242733885 
+epoch:80, data:031094_TB0, psnr is 35.558989461553104, ssim is 0.9677194438667303, mse is 60608.49461887905, mi is 1.4216832571357183 
+epoch:80, data:031095_TB0, psnr is 39.08353807513235, ssim is 0.9696696235774942, mse is 53442.749525233674, mi is 1.4595082486243098 
+epoch:80, data:031096_TB0, psnr is 38.51681745554164, ssim is 0.9718920095603677, mse is 41996.470612008234, mi is 1.4583622273813464 
+epoch:80, data:031097_TB0, psnr is 38.88409180175565, ssim is 0.965730563923195, mse is 51974.93542306082, mi is 1.4486645456701117 
+epoch:80, data:031098_TB0, psnr is 37.01527523621684, ssim is 0.9682430906747198, mse is 61850.6129939488, mi is 1.4467950988198919 
+epoch:80, data:031099_TB0, psnr is 37.97426402659013, ssim is 0.9786079644244117, mse is 43178.71221487863, mi is 1.454242607512423 
+epoch:80, data:031100_TB0, psnr is 38.931183170061736, ssim is 0.9656074285278652, mse is 61184.46894444057, mi is 1.4536708652250654 
+epoch:80, data:031101_TB0, psnr is 38.32910366489946, ssim is 0.9678753840375149, mse is 44030.54192897252, mi is 1.4476360748379962 
+epoch:80, data:031102_TB0, psnr is 36.47079194365371, ssim is 0.9655269774877255, mse is 56137.24580557687, mi is 1.4276229256335513 
+epoch:80, data:031103_TB0, psnr is 38.11102780365842, ssim is 0.9692998747392406, mse is 54636.75619506836, mi is 1.4408609971638469 
+epoch:80, data:031104_TB0, psnr is 38.74879172717141, ssim is 0.973627875283123, mse is 47832.80883483887, mi is 1.4587047397582433 
+epoch:80, data:031105_TB0, psnr is 38.707555185164686, ssim is 0.9674913048215562, mse is 63378.00960954939, mi is 1.4437310076114547 
+epoch:80, data:031106_TB0, psnr is 38.22867543389402, ssim is 0.9615806930034063, mse is 63685.95174909319, mi is 1.4412684531583717 
+epoch:80, data:031107_TB0, psnr is 40.018912104436964, ssim is 0.969957505444399, mse is 39812.59811968122, mi is 1.4617179581043163 
+epoch:80, data:031108_TB0, psnr is 38.84356114055653, ssim is 0.9695427601343789, mse is 64769.03883884975, mi is 1.4508626563195524 
+epoch:80, data:031109_TB0, psnr is 36.94828642823423, ssim is 0.967761923281952, mse is 46943.150490897046, mi is 1.4407345459197387 
+epoch:80, data:031110_TB0, psnr is 37.89666109281375, ssim is 0.9724905280645014, mse is 34308.01749529158, mi is 1.4512972378187017 
+epoch:80, data:031111_TB0, psnr is 36.35181855260175, ssim is 0.9666543080759586, mse is 54255.8372253418, mi is 1.4318869224597242 
+epoch:80, data:031113_TB0, psnr is 38.78566328590956, ssim is 0.972956000716568, mse is 44481.008999197824, mi is 1.4616825294371003 
+epoch:80, data:031114_TB0, psnr is 39.399960222666756, ssim is 0.9724642034156245, mse is 46199.23795166016, mi is 1.462267663410451 
+epoch:80, data:031115_TB0, psnr is 39.748837703951914, ssim is 0.9722029338803999, mse is 39995.65452226911, mi is 1.4729852555151741 
+epoch:80, data:031116_TB0, psnr is 39.268345149412745, ssim is 0.9741466799932984, mse is 50914.17342834473, mi is 1.464457451752053 
+epoch:80, data:031117_TB0, psnr is 38.40988764782795, ssim is 0.9678094322572005, mse is 49208.559362357, mi is 1.4473826132326593 
+epoch:80, data:031118_TB0, psnr is 36.965400675084595, ssim is 0.9709624027155029, mse is 41001.07783421108, mi is 1.4368917986390817 
+epoch:80, data:031119_TB0, psnr is 36.765762603619045, ssim is 0.966331746218754, mse is 47561.69332929339, mi is 1.4293426684544734 
+epoch:80, data:031120_TB0, psnr is 37.88551256525325, ssim is 0.9716912170072716, mse is 43736.54179556711, mi is 1.4423196425981901 
+epoch:80, data:031121_TB0, psnr is 39.326239645002666, ssim is 0.966517357324037, mse is 55490.888803100584, mi is 1.4582284361128826 
+epoch:80, data:031122_TB0, psnr is 38.23266712639504, ssim is 0.9712800589235753, mse is 46071.13027648926, mi is 1.4535597513631218 
+epoch:80, data:031123_TB0, psnr is 37.55394636185459, ssim is 0.9720210619933928, mse is 45737.69545636858, mi is 1.4417618360995594 
+epoch:80, data:031124_TB0, psnr is 40.62915808435715, ssim is 0.9682497117734292, mse is 43887.14068036761, mi is 1.470508384775277 
+epoch:80, data:031125_TB0, psnr is 35.759307868451046, ssim is 0.9725319407161181, mse is 38376.93730163574, mi is 1.4228483586939467 
+epoch:80, data:031126_TB0, psnr is 37.877624179890134, ssim is 0.9693210450911068, mse is 51055.86868852888, mi is 1.4532015895364458 
+epoch:80, data:031127_TB0, psnr is 39.626785753195655, ssim is 0.971130215074482, mse is 40892.63863307408, mi is 1.4709459612361377 
+epoch:80, data:031128_TB0, psnr is 37.50236034754791, ssim is 0.9632100633979113, mse is 55500.882695661276, mi is 1.4298021513699282 
+epoch:80, data:031129_TB0, psnr is 38.98851143206354, ssim is 0.967874909791712, mse is 38875.250110735215, mi is 1.4557548275776486 
+epoch:80, data:031130_TB0, psnr is 40.11336976793926, ssim is 0.973941509212832, mse is 37155.90804094587, mi is 1.466156578811586 
+epoch:80, data:031131_TB0, psnr is 39.246927289334586, ssim is 0.966059706269654, mse is 52972.29798104423, mi is 1.4541582106170448 
+epoch:80, data:031132_TB0, psnr is 36.24748994508617, ssim is 0.9666476690030857, mse is 60397.27677743094, mi is 1.4224963958729053 
+epoch:80, data:031133_TB0, psnr is 37.10600080979929, ssim is 0.966698809314945, mse is 46458.16721888951, mi is 1.4442789613680926 
+epoch:80, data:031134_TB0, psnr is 39.25559705026124, ssim is 0.96982251213142, mse is 41297.599428885325, mi is 1.45485216002547 
+epoch:80, data:031135_TB0, psnr is 37.31656244841925, ssim is 0.9678561709668414, mse is 41980.38577052525, mi is 1.4376426352541842 
+epoch:80, data:031136_TB0, psnr is 38.85612643724558, ssim is 0.9633737951008355, mse is 41697.07386823382, mi is 1.445138752771587 
+epoch:80, data:031137_TB0, psnr is 37.688637409726965, ssim is 0.9717493762132977, mse is 38802.74773080008, mi is 1.4473342536618514 
+epoch:80, data:031138_TB0, psnr is 36.25684201198973, ssim is 0.9673565293507488, mse is 39983.96293029785, mi is 1.422948602916466 
+epoch:80, data:031139_TB0, psnr is 40.59164637404484, ssim is 0.9764697939855964, mse is 55916.70805664062, mi is 1.47475917199739 
+saving the latest model (epoch 80,total_iters 624)
+saving the model at the end of epoch 80,iters 624
+End of epoch 80 / 80 	 Time Taken: 3029 sec
+val:
+
+epoch:79, average_ssim is 0.9087868294814909, average_psnr is 32.08504666086945, average_mi is 1.3630730900457144
+data:031144_TB0, psnr is 28.059329980352878, ssim is 0.8924625989008937, mse is 1169.3147805555554, mi is 1.312972592719756 
+data:022140_bB0, psnr is 32.977904259924166, ssim is 0.8671905184307319, mse is 100879501.39832269, mi is 1.348643081561263 
+data:022153_bB0, psnr is 27.911132301776608, ssim is 0.8091761637690289, mse is 1019065.047374907, mi is 1.3208528719876924 
+data:022158_bB0, psnr is 26.45497180714998, ssim is 0.8931082974315885, mse is 391546.4654553141, mi is 1.315759473476448 
+data:022216_bB0, psnr is 36.1423216346284, ssim is 0.9572027093504439, mse is 139894.40760934012, mi is 1.4202139506933067 
+data:031141_TB0, psnr is 35.9834875699422, ssim is 0.9584299393508329, mse is 122183.45399431502, mi is 1.405741906535798 
+data:031142_TB0, psnr is 33.60756473000572, ssim is 0.9509711991382404, mse is 161175.53324366978, mi is 1.3953007981122305 
+epoch:80, average_ssim is 0.9109355832253034, average_psnr is 32.04621541083484, average_mi is 1.3660973592445316
+data:031143_TB0, psnr is 35.23301100289875, ssim is 0.9589432394306683, mse is 84769.1030404227, mi is 1.4092941988697565 

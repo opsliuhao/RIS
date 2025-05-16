@@ -1,0 +1,14 @@
+load_data.py 读取与加载数据
+base_model.py  加载，保存网络
+pix2pix.py 定义生成器，鉴别器，损失函数等，包括反向传播。
+networks.py 定义生成器，鉴别器网络的各种细节，如几层卷积组成，E-GAN+的生成器细节等都标注出写在哪里了，在440行，里面还包括小的卷积层的定义，都在这个py文件里；鉴别器没改，用的PatchGAN。
+quantitative.py 定义了各种评价指标，包括保存评价指标
+save_img.py 用于保存生成的图像，转为nii保存在results的web下的nii或者test_nii下。
+complete_ssim.py 在这里没用，用于去除0值后计算评价指标的，这个没这么算。
+image_pool.py 好像没啥用，我没用到，源代码里自带的。
+
+注意：全部源码，细节，训练模型，数据等都在192.168.17.220服务器上，位置：/home/cyf/b1000-b0/E-GAN+/
+账号：cyf
+密码：tyut807
+
+具体细节都在总说明word文件里。

@@ -1,0 +1,4 @@
+  File "/home/stu/T1_2_b0/ResViT/train.py", line 22
+    model =  ResViT_model(istrain,ispretrain，cfg)
+                                            ^
+SyntaxError: invalid character '，' (U+FF0C)
